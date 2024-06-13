@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 0 auto; 
+    max-width: 200px; 
+}
+
+.header img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header hr {
+    width: 100%;
+    margin: 0;
+}

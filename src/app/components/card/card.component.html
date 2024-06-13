@@ -1,0 +1,34 @@
+<div class="card">
+  <h1>Cotação Moeda:</h1>
+  <form class="form">
+    <mat-form-field class="mat-form-field">
+      <mat-label>Digite um Código:</mat-label>
+      <textarea 
+        matInput 
+        placeholder="USD, EUR, CAD..." 
+        [(ngModel)]="currencyCodeFrom" 
+        name="currencyCodeFrom"
+        class="text-center"
+        (input)="upperCaseInput()">
+      </textarea>
+    </mat-form-field>
+  </form>
+  <button class="btn-card" (click)="getCurrentExchangeRate()">Pesquisar</button>
+</div>
+<hr>
+<div class="card-rate-now" *ngIf="showExchangeRate">
+  <mat-card class="mat-form-card-rate-now">
+    <div class="rate-now-infos">
+      <div class="infos-rate">
+        <h3>Cotação Corrente:</h3>
+        <p>{{ exchangeRateData.lastUpdatedAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+      </div>
+      <div class="coins">
+        <h2>{{ exchangeRateData.fromSymbol }}/ BRL</h2>
+      </div>
+    </div>
+    <div class="current-rate">
+      <h1>R$ {{ exchangeRateData.exchangeRate | number:'1.2-2' }}</h1>
+    </div>
+  </mat-card>
+</div>
